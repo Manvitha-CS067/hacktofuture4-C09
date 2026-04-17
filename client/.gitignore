@@ -1,0 +1,25 @@
+# --- SECURITY (CRITICAL) ---
+.env
+.env.local
+*.local
+
+# --- NODE / FRONTEND ---
+# This line ignores node_modules anywhere in the project (root or client)
+node_modules/
+dist/
+dist-ssr/
+npm-debug.log*
+
+# --- PYTHON / BACKEND ---
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.pytest_cache/
+
+# --- EDITORS & SYSTEM ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

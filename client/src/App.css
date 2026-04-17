@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --emerald-neon: #22EE5B;
+  --critical-red: #FF3131; /* Brighter Red */
+  --warning-yellow: #FFD700; /* Richer Gold */
+}
+
+body {
+  background: #050505;
+  color: #F8FAFC; /* Softer white for easier reading */
+  cursor: crosshair;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px; /* Standard base size */
+  overflow: hidden;
+}
+
+/* UI UTILITIES */
+.text-emerald-neon {
+  color: var(--emerald-neon);
+  text-shadow: 0 0 10px rgba(34, 238, 91, 0.4);
+}
+
+.text-critical {
+  color: var(--critical-red);
+  text-shadow: 0 0 12px rgba(255, 49, 49, 0.5);
+  font-weight: 800;
+}
+
+.text-warning {
+  color: var(--warning-yellow);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  font-weight: 700;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: rgba(34, 238, 91, 0.3); border-radius: 10px; }
