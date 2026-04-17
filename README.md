@@ -1,86 +1,73 @@
-# HackToFuture 4.0 — Template
+HACKTOFUTURE 4.O THE BRAINIACS C-09
 
-Welcome to your official HackToFuture 4 repository.
 
-This repository template will be used for development, tracking progress, and final submission of your project. Ensure that all work is committed here within the allowed hackathon duration.
+Problem Statement / Idea
 
----
+The Problem: Traditional authentication (passwords/MFA) is vulnerable to session hijacking, MITM attacks, and credential stuffing because it only verifies what a user knows, not who they are or how they behave.
 
-### Instructions for the teams:
+Importance: Financial and enterprise data require a "Zero Trust" layer that continuously verifies identity without ruining user experience.
 
-- Fork the Repository and name the forked repo in this convention: hacktofuture4-team_id (for eg: hacktofuture4-A01)
+Target Users: Fintech platforms, Cybersecurity firms, and Enterprise SaaS providers.
 
----
 
-## Rules
+Proposed Solution
 
-- Work must be done ONLY in the forked repository
-- Only Four Contributors are allowed.
-- After 36 hours, Please make PR to the Main Repository. A Form will be sent to fill the required information.
-- Do not copy code from other teams
-- All commits must be from individual GitHub accounts
-- Please provide meaningful commits for tracking.
-- Do not share your repository with other teams
-- Final submission must be pushed before the deadline
-- Any violation may lead to disqualification
+Approach: We built Nexis Sentinel, a behavioral biometrics and environmental anchoring engine.
 
----
+Uniqueness: Unlike static MFA, Nexis uses Agentic AI to analyze "Digital DNA" (typing cadence, mouse velocity) and "Environmental Anchoring" (Hardware DNA, Network Latency) to detect threats like MITM and DDoS in real-time.
 
-# The Final README Template 
 
-## Problem Statement / Idea
+Tech Stack
 
-Clearly describe the problem you are solving.
+Frontend: React.js, Tailwind CSS, Framer Motion, Lucide React.
 
-- What is the problem?
-- Why is it important?
-- Who are the target users?
+Backend: FastAPI (Python), WebSockets, Uvicorn.
 
----
+Database: Supabase (PostgreSQL).
 
-## Proposed Solution
+Auth: Clerk.
 
-Explain your approach:
+AI/ML: Custom Anomaly Detection Agent (Isolation Forest/ML).
 
-- What are you building?
-- How does it solve the problem?
-- What makes your solution unique?
 
----
+Project Setup Instructions
+Follow these steps to deploy the Nexis Sentinel environment locally.
 
-## Features
+1. Clone the Repository
+Bash
+git clone https://github.com/Manvitha-CS067/hacktofuture4-C09.git
+cd hacktofuture4-C09
+2. Configure Environment Variables
+To protect infrastructure integrity, environment secrets are not included in the repository. Create a .env file in the root directory and add the following:
 
-List the core features of your project:
+Code snippet
+# Supabase Configuration
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_KEY=your_supabase_anon_key
 
-- Feature 1
-- Feature 2
-- Feature 3
+# Clerk Authentication (Frontend)
+VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+3. Backend Setup (FastAPI)
+The backend handles real-time anomaly detection and biometric processing.
 
----
+Bash
+# Install required Python dependencies
+pip install fastapi uvicorn supabase python-dotenv
 
-## Tech Stack
+# Launch the Sentinel Server
+python main.py
+The server will initialize at http://127.0.0.1:8000
 
-Mention all technologies used:
+4. Frontend Setup (React + Vite)
+The dashboard provides a real-time forensic view of the network security state.
 
-- Frontend:
-- Backend:
-- Database:
-- APIs / Services:
-- Tools / Libraries:
+Bash
+# Navigate to the interface directory
+cd client
 
----
+# Install Node dependencies
+npm install
 
-## Project Setup Instructions
-
-Provide clear steps to run your project:
-
-```bash
-# Clone the repository
-git clone <repo-link>
-
-# Install dependencies
-...
-
-# Run the project
-...
-```
+# Start the development interface
+npm run dev
+The dashboard will be accessible at http://localhost:5173
